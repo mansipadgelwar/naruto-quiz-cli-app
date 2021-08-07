@@ -4,15 +4,15 @@ var readlineSync = require('readline-sync');
  var topScore = [
     {
       name : "Mugdha",
-      score : 5
+      score : 10
     },
     {
       name : "Pradnya",
-      score : 4
+      score : 8
     },
     {
       name : "Mahesh",
-      score : 4
+      score : 7
     }
   ];
 
@@ -20,7 +20,7 @@ var readlineSync = require('readline-sync');
 
     var userName = readlineSync.question("What is your name? ");
 
-	console.log(chalk.red.bgWhite.bold( "Welcome "+userName+" to THE ULTIMATE NARUTO QUIZ \n"));
+	console.log(chalk.red.bgWhite.bold( "Welcome "+userName+" to THE TAARAK MEHTA KA OOLTAH CHASHMAH Quiz \n"));
   console.log(chalk.red.bgWhite.bold("---------------QUIZ BEGINS---------------\n"));
 
 	function play(question,correctOption,answer)
@@ -46,34 +46,64 @@ var readlineSync = require('readline-sync');
 	}
   
 	var questionOne = {
-    question: "What is Naruto's last name? \n a. Uchiha \n b. Uzumaki \n c. Hyuga \n d. Haruno \n \n",
-    correctOption: "b",
-    answer: "Naruto's last name is Uzumaki."
+    question: " Let's start off easy, who all are part of Tapu Sena? \n a. Ross and Will Colbert \n b. Tapu akela hi puri sena hai \n c. Tapu, Gogo, and Pinki \n d. Tapu, Sonu, Goli, Gogi, and Pinku. \n \n",
+    correctOption: "d",
+    answer: "Tapu, Sonu, Goli, Gogi, and Pinku are part of Tapu Sena."
   }
   var questionTwo={
-    question: "The Sharingan is what type of jutsu? \n a. Ninjutsu \n b. Dojutsu \n c. Genjutsu \n d. Taijutsu \n \n",
-    correctOption: "b",
-    answer: "Doujutsu is a type of technique that exists in the eyes. Another type of doujutsu is the byakugan."
+    question: "What is Jethalal's father, Bapu ji's, full name? \n a. Champak Sharma Gada  \n b. Natwarlal Prabhashankar Udhaiwala  \n c. Champaklal Jayantilal Gada\n d. Jayantilal Giridharlal Gada \n \n",
+    correctOption: "c",
+    answer: "Champaklal Jayantilal Gada is Jethalal's father, Bapu ji's, full name."
   }
   var questionThree = {
-    question : "Naruto first shows his nine-tails chakra when he fights who? \n a. Sasuke Uchiha \n b. Neji Hyuuga \n c. Gaara \n d. Haku \n",
-    correctOption: "d",
-    answer:"Naruto first shows his nine-tails chakra when he fights haku"
+    question : " Most evenings, the group gets together at a shop to discuss everything under the sun. What is the name of the shop? \n a. Abdul Miyan's Store \n b. Aao-Khao store.  \n c. All-In-One General Store \n d. General Store \n",
+    correctOption: "c",
+    answer:"Name of the shop is All-In-One General Store."
   }
   	var questionFour = 
 	{
-	   question: "Who tricked Naruto into stealing a sacred scroll? \n a. Zabuza \n b. Iruka \n c. Mizuki \n d. Sasuke \n ",
-	   correctOption: "c",
-     answer:"Mizuki tricked Naruto into stealing a sacred sroll"
+	   question: "Complete this line from the title song of the show:\n Problem toh hai sabke saath \n Bas ___ ki hai baat \n Taarak Mehta ka ooltah chashmah \n a. suljhane \n b. nazariye \n c. bhulane \n d. dekhne  \n ",
+	   correctOption: "b",
+     answer:"Problem toh hai sabke saath Bas nazariye ki hai baat."
 	}
 	var questionFive =
 	{
-	    question: "Which Hokage sealed the nine-tailed fox inside Naruto ?\n a. fourth Hokage \n b. third Hokage \n c. second Hokage \n d. first Hokage \n ",
+	    question: "Other than being the society's secretary and a teacher, what is Bhide's side job? \n a. He is an electrician  \n b. He delivers the pickles and papad that his wife makes.  \n c. He is a carpenter  \n d. How does he even have the time to do a third job? \n ",
+		  correctOption : "b",
+      answer: "Other than being the society's secretary and a teacher, he delivers the pickles and papad that his wife makes. "
+	}   
+  var questionSix =
+	{
+	    question: "On which street is the Gokuldham society located? \n a. Powder gali, Goregaon East.  \n b. Lower Parel  \n c. TM Street, Andheri West  \n d. Yeh toh na ho paega. \n ",
 		  correctOption : "a",
-      answer: "Fourth Hokage sealed the nine-tailed fox inside Naruto"
+      answer: "Gokuldham society is located on Powder gali, Goregaon East street."
+	}   
+  var questionSeven =
+	{
+	    question: "What is the name of the bhojnalaya where Bagha and Natu Kaka have food? \n a. Gujarati Bhojnalya  \n b. Padmini Bhojnalaya  \n c. Savarna Bhojnalaya \n d. Padmavati Bhojnalaya  \n ",
+		  correctOption : "d",
+      answer: "Bagha and Natu Kaka have their food in Padmavati Bhojnalaya."
+	}   
+  var questionEight =
+	{
+	    question: "What is Krishnan Iyer's profession? \n a. Reporter  \n b. Scientist  \n c. Teacher  \n d. Electrician  \n ",
+		  correctOption : "b",
+      answer: "Krishnan Iyer is a Scientist."
+	}   
+  var questionNine =
+	{
+	    question: "Who among the following is not a member of Gokuldham society? \n a. Aatmaram Tukaram Bhide \n b. Roshan Singh Sodhi \n c. Tulsidas Parekh  \n d. Hansraj Hathi  \n ",
+		  correctOption : "c",
+      answer: "Tulsidas Parekh is not a member of Gokuldham society. "
+	}  
+   var questionTen =
+	{
+	    question: "Which of the following shows had a crossover with Taarak Mehta Ka Ooltah Chashmah? \n a. Kasuatti Zindagi Kay \n b. Bhabhiji Ghar Par Hain  \n c. C.I.D \n d. Sumit Sambhal Lega  \n ",
+		  correctOption : "c",
+      answer: "C.I.D had a crossover with Taarak Mehta Ka Ooltah Chashmah."
 	}   
 	
-	var questions = [questionOne, questionTwo,questionThree,questionFour,questionFive];
+	var questions = [questionOne, questionTwo,questionThree,questionFour,questionFive,questionSix,questionSeven,questionEight,questionNine,questionTen];
 	for(var i=0; i<questions.length; i++)
 	{
 	  var currentQuestion = questions[i];
