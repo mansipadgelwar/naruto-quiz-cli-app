@@ -8,4 +8,4 @@ A CLI app to play fun quiz to know if you are an OG TMKOC fan.
 - If the answer is incorrect -1 will be deducted from current score.
 - After completing the quiz you can see your final score & list of highest scorers.
 
-Link: 
+Link: https://replit.com/@MansiM1/TMKOC-quiz-CLI#index.js?embed=1&output=1
