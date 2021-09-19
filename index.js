@@ -1,7 +1,7 @@
 const chalk = require('chalk');
 var readlineSync = require('readline-sync');
 
- var topScore = [
+var topScore = [
     {
       name : "Mugdha",
       score : 10
@@ -16,35 +16,6 @@ var readlineSync = require('readline-sync');
     }
   ];
 
-    var score = 0;
-
-    var userName = readlineSync.question("What is your name? ");
-
-	console.log(chalk.red.bgWhite.bold( "Welcome "+userName+" to THE TAARAK MEHTA KA OOLTAH CHASHMAH Quiz \n"));
-  console.log(chalk.red.bgWhite.bold("---------------QUIZ BEGINS---------------\n"));
-
-	function play(question,correctOption,answer)
-	{
-    console.log(chalk.white.bgMagenta.bold("\n-------------- Q U E S T I O N --------------\n"));
-		var userAnswer = readlineSync.question(question);
-    
-		if(userAnswer.toUpperCase() === correctOption.toUpperCase())
-		{
-			console.log("You are right!");
-			score = score + 1;
-		}
-		else
-    
-		{
-		  console.log(chalk.red.bold("You are wrong!\n"));
-		  score = score - 1;
-      console.log(chalk.red.bgWhite.bold(answer + "\n"));
-		}
-		console.log(chalk.yellow("Current score: "+ score));
-       
-		
-	}
-  
 	var questionOne = {
     question: " Let's start off easy, who all are part of Tapu Sena? \n a. Ross and Will Colbert \n b. Tapu akela hi puri sena hai \n c. Tapu, Gogo, and Pinki \n d. Tapu, Sonu, Goli, Gogi, and Pinku. \n \n",
     correctOption: "d",
@@ -60,7 +31,7 @@ var readlineSync = require('readline-sync');
     correctOption: "c",
     answer:"Name of the shop is All-In-One General Store."
   }
-  	var questionFour = 
+  var questionFour = 
 	{
 	   question: "Complete this line from the title song of the show:\n Problem toh hai sabke saath \n Bas ___ ki hai baat \n Taarak Mehta ka ooltah chashmah \n a. suljhane \n b. nazariye \n c. bhulane \n d. dekhne  \n ",
 	   correctOption: "b",
@@ -96,14 +67,44 @@ var readlineSync = require('readline-sync');
 		  correctOption : "c",
       answer: "Tulsidas Parekh is not a member of Gokuldham society. "
 	}  
-   var questionTen =
+  var questionTen =
 	{
 	    question: "Which of the following shows had a crossover with Taarak Mehta Ka Ooltah Chashmah? \n a. Kasuatti Zindagi Kay \n b. Bhabhiji Ghar Par Hain  \n c. C.I.D \n d. Sumit Sambhal Lega  \n ",
 		  correctOption : "c",
       answer: "C.I.D had a crossover with Taarak Mehta Ka Ooltah Chashmah."
 	}   
+
+var questions = [questionOne, questionTwo,questionThree,questionFour,questionFive,questionSix,questionSeven,questionEight,questionNine,questionTen];
 	
-	var questions = [questionOne, questionTwo,questionThree,questionFour,questionFive,questionSix,questionSeven,questionEight,questionNine,questionTen];
+
+var score = 0;
+
+var userName = readlineSync.question("What is your name? ");
+
+console.log(chalk.red.bgWhite.bold( "Welcome "+userName+" to THE TAARAK MEHTA KA OOLTAH CHASHMAH Quiz \n"));
+
+console.log(chalk.red.bgWhite.bold("---------------QUIZ BEGINS---------------\n"));
+
+function play(question,correctOption,answer){
+    console.log(chalk.white.bgMagenta.bold("\n-------------- Q U E S T I O N --------------\n"));
+		var userAnswer = readlineSync.question(question);
+    
+		if(userAnswer.toUpperCase() === correctOption.toUpperCase())
+		{
+			console.log("You are right!");
+			score = score + 1;
+		}
+		else    
+		{
+		  console.log(chalk.red.bold("You are wrong!\n"));
+		  score = score - 1;
+      console.log(chalk.red.bgWhite.bold(answer + "\n"));
+		}
+		console.log(chalk.yellow("Current score: "+ score));       
+		
+	}  
+
+
 	for(var i=0; i<questions.length; i++)
 	{
 	  var currentQuestion = questions[i];
@@ -118,23 +119,28 @@ var readlineSync = require('readline-sync');
 	}
  
 
-  function topScorer(){
-    for(var i=0;i<topScore.length;i++){
+function topScorer()
+{
+    for(var i=0;i<topScore.length;i++)
+    {
       var currentScore = topScore[i];
-      if(score > currentScore.score){
+      if(score > currentScore.score)
+      {
         console.log(chalk.white.bgRed.bold("Hurray! you have beat one of the top scorers. Send me screenshot of your score and I will update the top scorer list."));
         break;
       }
     }
-  }
+}
 
-  topScorer();
+topScorer();
 
-  function showTopScores(topScore){
-     for(let i=0;i<topScore.length;i++){
+function showTopScores(topScore)
+{
+     for(let i=0;i<topScore.length;i++)
+     {
        console.log(topScore[i].name + ":" + topScore[i].score);
      }
-  }
+}
 
-  console.log("\nHere's the list of top scorers.\n");
-  showTopScores(topScore);
+console.log("\nHere's the list of top scorers.\n");
+showTopScores(topScore);
